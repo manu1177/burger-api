@@ -1,0 +1,19 @@
+<?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Content-Type: application/json");
+
+$database = new mysqli("db", "burger_api_user", "root", "burger_api");
+mysqli_set_charset($database, "utf8mb4");
+
+
+
+
+$article2 = $database->execute_query("SELECT * FROM article WHERE article.id = 2")->fetch_all(MYSQLI_ASSOC);
+
+$arrayFinal = [
+    "article2" => $article2
+];
+
+
+echo json_encode($arrayFinal);
