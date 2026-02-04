@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-
+// connexion a ma base
 $database = new mysqli("db", "burger_api_user", "root", "burger_api");
 mysqli_set_charset($database, "utf8mb4");
 
